@@ -1,11 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
+
+body{
+    overflow-x: hidden;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+a{
+    cursor: pointer;
+}
+
+
 .header{
     min-height: 100vh;
     width: 100%;
@@ -15,8 +35,9 @@
     background-size: cover;
     position: relative;
 }
+
 nav {
-    position: absolute; /* or use fixed if you want it to stay on top while scrolling */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -24,29 +45,31 @@ nav {
     padding: 2% 6%;
     justify-content: space-between;
     align-items: center;
-    z-index: 1000; /* ensures it stays above other content */
+    z-index: 1000;
 }
 
 nav img{
     width: 150px;
-
 }
+
 .nav-links{
     flex: 1;
     text-align: right;
 }
+
 .nav-links ul li{
     list-style: none;
     display: inline-block;
     padding: 8px 12px;
     position: relative;
 }
+
 .nav-links ul li a{
     color: #fff;
     text-decoration: none;
     font-size: 15px;
-
 }
+
 .nav-links ul li::after{
     content: '';
     width: 0%;
@@ -56,9 +79,11 @@ nav img{
     margin: auto;
     transition: 0.3s;
 }
+
 .nav-links ul li:hover::after{
     width: 100%;
 }
+
 .text-box{
     width: 90%;
     color: #fff;
@@ -68,14 +93,17 @@ nav img{
     transform: translate(-50%, -50%);
     text-align: center;
 }
+
 .text-box h1{
     font-size: 62px;
 }
+
 .text-box p{
-    margin: 10px ;
+    margin: 10px;
     font-size: 14px;
     color: #fff;
 }
+
 .hero-btn{
     display: inline-block;
     text-decoration: none;
@@ -87,9 +115,7 @@ nav img{
     position: relative;
     cursor: pointer;
 }
-a{
-    cursor: pointer;
-}
+
 .hero-btn:hover{
     border: 1px solid #f44336;
     background-color: #f44336;
@@ -100,45 +126,20 @@ nav #fa{
     display: none;
 }
 
-@media(max-width: 700px){
-    .text-box h1{
-        font-size: 20px;
-    }
-    .nav-links ul li{
-        display: block;
-    }
-    .nav-links{
-        position: absolute;
-        background: #f44336;
-        height: 100vh;
-        width: 200px;
-        top: 0;
-        right: -200px;
-        text-align: left;
-        z-index: 2;
-        transition: 1s;
-    }
-    nav #fa{
-        display: block;
-        color: #fff;
-        margin: 10px;
-        font-size: 22px;
-        cursor: pointer;
-    }
-    .nav-links ul{
-        padding: 30px;
-    }
-}
+
+
 .aboutus{
     width: 80%;
     margin: auto;
     text-align: center;
     padding-top: 100px;
 }
+
 .aboutus h1{
     font-size: 36px;
     font-weight: 600;
 }
+
 .aboutus p{
     color: #777;
     font-size: 14px;
@@ -146,52 +147,27 @@ nav #fa{
     line-height: 22px;
     padding: 10px;
 }
-.aboutus .profile-cards .card1{
+
+.aboutus .profile-cards{
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    place-items: center;
+    gap: 30px;
+    margin-top: 50px;
+    padding-bottom: 50px;
 }
-.aboutus .profile-cards .card1 .circle{
-    background-color: white;
-    width: 220px;
-    height: 220px;
-    justify-content: center;
-    place-items: center;
-    border: 1px solid white;
-    padding: 15px;
-    border-radius: 500px;
-    box-shadow: 5px 5px 10px grey;
-}
-.aboutus .profile-cards .card1 .circle img{
-    width: 175px;
-    border-radius: 500px;
-    height: 175px;
-    margin-top: 5px;
-}
-.aboutus .profile-cards .card2{
-    justify-content: center;
-    place-items: center;
-}
-.aboutus .profile-cards .card2 .circle{
-    background-color: white;
-    width: 220px;
-    height: 220px;
-    justify-content: center;
-    place-items: center;
-    border: 1px solid white;
-    padding: 15px;
-    border-radius: 500px;
-    box-shadow: 5px 5px 10px grey;
-}
-.aboutus .profile-cards .card2 .circle img{
-    width: 175px;
-    border-radius: 500px;
-    height: 175px;
-    margin-top: 5px;
-}
+
+.aboutus .profile-cards .card1,
+.aboutus .profile-cards .card2,
 .aboutus .profile-cards .card3{
+    flex: 1 1 300px;
+    max-width: 400px;
     justify-content: center;
     place-items: center;
 }
+
+.aboutus .profile-cards .card1 .circle,
+.aboutus .profile-cards .card2 .circle,
 .aboutus .profile-cards .card3 .circle{
     background-color: white;
     width: 220px;
@@ -202,28 +178,44 @@ nav #fa{
     padding: 15px;
     border-radius: 500px;
     box-shadow: 5px 5px 10px grey;
+    margin: 0 auto;
 }
+
+.aboutus .profile-cards .card1 .circle img,
+.aboutus .profile-cards .card2 .circle img,
 .aboutus .profile-cards .card3 .circle img{
     width: 175px;
     border-radius: 500px;
     height: 175px;
     margin-top: 5px;
 }
+
+.aboutus .profile-cards .box{
+    text-align: center;
+    padding: 0 15px;
+}
+
+
 .newsletters{
     width: 100%;
-    height: 800px;
+    min-height: 800px;
     margin: auto;
     text-align: center;
-    place-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background: #f44336;
     background-size: cover;
     color: #fff;
-    padding: 400px;
+    padding: 400px 50px;
 }
+
 .newsletters h1{
     font-size: 36px;
     font-weight: 600;
 }
+
 .newsletters h3{
     color: #fff;
     font-size: 14px;
@@ -233,21 +225,27 @@ nav #fa{
 }
 
 
+
 .editors{
     width: 100%;
-    height: 800px;
+    min-height: 800px;
     margin: auto;
     text-align: center;
-    place-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background: #fff;
     background-size: cover;
     color: black;
-    padding: 400px;
+    padding: 400px 50px;
 }
+
 .editors h1{
     font-size: 36px;
     font-weight: 600;
 }
+
 .editors h3{
     color: #777;
     font-size: 14px;
@@ -256,21 +254,28 @@ nav #fa{
     padding: 10px;
 }
 
+
+
 .cca{
     width: 100%;
-    height: 800px;
+    min-height: 800px;
     margin: auto;
     text-align: center;
-    place-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background: #f44336;
     background-size: cover;
     color: #fff;
-    padding: 400px;
+    padding: 400px 50px;
 }
+
 .cca h1{
     font-size: 36px;
     font-weight: 600;
 }
+
 .cca h3{
     color: #fff;
     font-size: 14px;
@@ -279,21 +284,27 @@ nav #fa{
     padding: 10px;
 }
 
+
 .schoolcouncil{
     width: 100%;
-    height: 800px;
+    min-height: 800px;
     margin: auto;
     text-align: center;
-    place-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background: #fff;
     background-size: cover;
     color: black;
-    padding: 400px;
+    padding: 400px 50px;
 }
+
 .schoolcouncil h1{
     font-size: 36px;
     font-weight: 600;
 }
+
 .schoolcouncil h3{
     color: #777;
     font-size: 14px;
@@ -302,42 +313,52 @@ nav #fa{
     padding: 10px;
 }
 
+
 .contact{
     width: 100%;
-    height: 1000px;
+    min-height: 1000px;
     margin: auto;
-    place-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: #060616;
     background-size: cover;
     color: #fff;
-    padding: 400px;
+    padding: 100px 50px;
 }
+
 .contact h1{
     font-size: 36px;
     color: white;
-    padding-top: 10px;
+    padding-bottom: 30px;
     text-align: center;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 600;
 }
+
+.contact form{
+    width: 100%;
+    max-width: 800px;
+}
+
 .contact input{
     background-color: #fff;
-    width: 70%;
-    margin-left: 12%;
+    width: 100%;
     font-size: 20px;
     padding: 16px 16px;
     border-radius: 10px;
-    border-color: black;
+    border: 2px solid black;
     margin-bottom: 20px;
 }
+
 .contact textarea{
     background-color: white;
-    width: 70%;
-    margin-left:12%;
+    width: 100%;
     font-size: 20px;
     border-radius: 10px;
     padding: 16px 16px;
-    border-color: black;
+    border: 2px solid black;
     margin-bottom: 25px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -357,17 +378,379 @@ textarea:focus-within{
 button{
     background-color: #5bd183;
     border-radius: 20px;
-    border-color: black;
+    border: 2px solid black;
     font-size: 22px;
-    padding: 10px 18px;
+    padding: 12px 24px;
     text-align: center;
-    display: flex;
-    margin: auto;
-}
-
-button:hover{
-    opacity: 80%;
+    display: block;
+    margin: 0 auto;
     cursor: pointer;
 }
 
+button:hover{
+    opacity: 0.8;
+}
 
+@media(min-width: 1440px){
+    .header{
+        padding: 180px;
+    }
+    
+    .text-box h1{
+        font-size: 72px;
+    }
+    
+    .text-box p{
+        font-size: 16px;
+    }
+    
+    .aboutus{
+        width: 70%;
+    }
+}
+
+
+@media(max-width: 1200px){
+    .aboutus{
+        width: 85%;
+        padding-top: 80px;
+    }
+    
+    .aboutus .profile-cards .card1,
+    .aboutus .profile-cards .card2,
+    .aboutus .profile-cards .card3{
+        flex: 1 1 300px;
+        max-width: 350px;
+    }
+}
+
+@media(max-width: 1024px){
+    nav{
+        padding: 2% 4%;
+    }
+    
+    nav img{
+        width: 120px;
+    }
+    
+    .nav-links ul li{
+        padding: 8px 10px;
+    }
+    
+    .nav-links ul li a{
+        font-size: 14px;
+    }
+    
+    .newsletters,
+    .editors,
+    .cca,
+    .schoolcouncil{
+        min-height: 500px;
+        padding: 150px 50px;
+    }
+    
+    .newsletters h1,
+    .editors h1,
+    .cca h1,
+    .schoolcouncil h1{
+        font-size: 32px;
+    }
+    
+    .contact{
+        min-height: 700px;
+        padding: 80px 50px;
+    }
+    
+    .contact input,
+    .contact textarea{
+        font-size: 18px;
+    }
+}
+
+
+@media(min-width: 768px) and (max-width: 1024px){
+    .aboutus .profile-cards{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+}
+
+
+@media(max-width: 768px){
+    .header{
+        padding: 80px 20px;
+    }
+    
+    nav img{
+        width: 100px;
+    }
+    
+    .text-box h1{
+        font-size: 32px;
+    }
+    
+    .text-box p{
+        font-size: 13px;
+    }
+    
+    .text-box h1{
+        font-size: 20px;
+    }
+    
+    .nav-links ul li{
+        display: block;
+    }
+    
+    .nav-links{
+        position: fixed;
+        background: #f44336;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+    }
+    
+    nav #fa{
+        display: block;
+        color: #fff;
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+    
+    .nav-links ul{
+        padding: 30px;
+    }
+    
+   
+    .aboutus{
+        width: 95%;
+        padding-top: 60px;
+    }
+    
+    .aboutus h1{
+        font-size: 28px;
+    }
+    
+    .aboutus p{
+        font-size: 13px;
+    }
+    
+    .aboutus .profile-cards{
+        gap: 40px;
+    }
+    
+    .aboutus .profile-cards .card1,
+    .aboutus .profile-cards .card2,
+    .aboutus .profile-cards .card3{
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+    
+    .aboutus .profile-cards .card1 .circle,
+    .aboutus .profile-cards .card2 .circle,
+    .aboutus .profile-cards .card3 .circle{
+        width: 180px;
+        height: 180px;
+    }
+    
+    .aboutus .profile-cards .card1 .circle img,
+    .aboutus .profile-cards .card2 .circle img,
+    .aboutus .profile-cards .card3 .circle img{
+        width: 140px;
+        height: 140px;
+    }
+    
+    .aboutus .profile-cards .box h2{
+        font-size: 18px;
+    }
+    
+    .aboutus .profile-cards .box p{
+        font-size: 13px;
+    }
+    
+   
+    .newsletters,
+    .editors,
+    .cca,
+    .schoolcouncil{
+        padding: 100px 30px;
+        min-height: 400px;
+    }
+    
+    .newsletters h1,
+    .editors h1,
+    .cca h1,
+    .schoolcouncil h1{
+        font-size: 28px;
+    }
+    
+    .newsletters h3,
+    .editors h3,
+    .cca h3,
+    .schoolcouncil h3{
+        font-size: 13px;
+    }
+    
+
+    .contact{
+        padding: 60px 30px;
+        min-height: 600px;
+    }
+    
+    .contact h1{
+        font-size: 28px;
+    }
+    
+    .contact input,
+    .contact textarea{
+        font-size: 16px;
+        padding: 14px 14px;
+    }
+    
+    button{
+        font-size: 20px;
+        padding: 12px 20px;
+    }
+}
+
+
+@media(max-width: 480px){
+    .header{
+        padding: 60px 15px;
+    }
+    
+    nav img{
+        width: 90px;
+    }
+    
+    .text-box h1{
+        font-size: 24px;
+    }
+    
+    .text-box p{
+        font-size: 12px;
+        line-height: 20px;
+    }
+    
+    .hero-btn{
+        padding: 10px 24px;
+        font-size: 12px;
+    }
+
+    .aboutus h1{
+        font-size: 24px;
+    }
+    
+    .aboutus .profile-cards .card1 .circle,
+    .aboutus .profile-cards .card2 .circle,
+    .aboutus .profile-cards .card3 .circle{
+        width: 150px;
+        height: 150px;
+    }
+    
+    .aboutus .profile-cards .card1 .circle img,
+    .aboutus .profile-cards .card2 .circle img,
+    .aboutus .profile-cards .card3 .circle img{
+        width: 120px;
+        height: 120px;
+    }
+    
+    .aboutus .profile-cards .box h2{
+        font-size: 16px;
+    }
+    
+    .aboutus .profile-cards .box p{
+        font-size: 12px;
+    }
+
+    .newsletters,
+    .editors,
+    .cca,
+    .schoolcouncil{
+        padding: 80px 20px;
+        min-height: 350px;
+    }
+    
+    .newsletters h1,
+    .editors h1,
+    .cca h1,
+    .schoolcouncil h1{
+        font-size: 24px;
+    }
+
+    .contact{
+        padding: 50px 20px;
+        min-height: 550px;
+    }
+    
+    .contact h1{
+        font-size: 24px;
+        padding-bottom: 20px;
+    }
+    
+    .contact input,
+    .contact textarea{
+        font-size: 14px;
+        padding: 12px 12px;
+        margin-bottom: 15px;
+    }
+    
+    .contact textarea{
+        margin-bottom: 20px;
+    }
+    
+    button{
+        font-size: 18px;
+        padding: 10px 16px;
+    }
+}
+
+@media(max-width: 320px){
+    nav img{
+        width: 80px;
+    }
+    
+    .text-box h1{
+        font-size: 20px;
+    }
+    
+    .text-box p{
+        font-size: 11px;
+    }
+    
+    .hero-btn{
+        padding: 8px 18px;
+        font-size: 11px;
+    }
+    
+    .aboutus h1{
+        font-size: 20px;
+    }
+    
+    .newsletters h1,
+    .editors h1,
+    .cca h1,
+    .schoolcouncil h1{
+        font-size: 20px;
+    }
+    
+    .contact h1{
+        font-size: 20px;
+    }
+    
+    .contact input,
+    .contact textarea{
+        font-size: 13px;
+        padding: 10px;
+    }
+    
+    button{
+        font-size: 16px;
+        padding: 8px 14px;
+    }
+}
