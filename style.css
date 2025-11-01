@@ -754,3 +754,20 @@ button:hover{
         padding: 8px 14px;
     }
 }
+
+footer{
+    text-align: center;
+    align-content: center;
+    place-items: center;
+    justify-content: center;
+    background-color: #f44336;
+    color: #fff;
+    text-decoration: none;
+    width: 100%;
+    height: 150px;
+}
+footer a{
+    text-decoration: none;
+    color: #fff;
+}
+
